@@ -6,5 +6,5 @@
 
 ## インストール
 ```bash
-git clone [https://github.com/Toriyamasan/RobosysReport2025.git](https://github.com/Toriyamasan/RobosysReport2025.git)
+git clone https://github.com/Toriyamasan/RobosysReport2025.git
 cd RobosysReport2025
