@@ -11,7 +11,7 @@
 リポジトリをクローンしてディレクトリに入ります。
 
 ```bash
-git clone [https://github.com/Toriyamasan/RobosysReport2025.git](https://github.com/Toriyamasan/RobosysReport2025.git)
+git clone https://github.com/Toriyamasan/RobosysReport2025.git
 cd RobosysReport2025
 
 実行権限がない場合は付与してください
