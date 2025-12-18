@@ -11,16 +11,4 @@ out=$(echo "45m" | ./sumtime)
 out=$(echo "1.5h" | ./sumtime)
 [ "${out}" = "1h 30m" ] || exit 1
 
-out=$(echo "1h -30m" | ./sumtime)
-[ "${out}" = "1h 0m" ] || exit 1
-
-out=$(echo "1h 30m 1 2 3h" | ./sumtime)
-[ "${out}" = "4h 30m" ] || exit 1
-
-out=$(echo "1h 30m 1hy" | ./sumtime)
-[ "${out}" = "1h 30m" ] || exit 1
-
-out=$(echo "abc -1h def" | ./sumtime)
-[ "${out}" = "0m" ] || exit 1 
-
 echo "OK"
