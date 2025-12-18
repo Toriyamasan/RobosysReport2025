@@ -29,26 +29,25 @@ out=$(echo "1.5h" | ./sumtime | tr -d '\n')
 # 不正な入力のテスト
 
 # 空入力
-out=$(echo "" | ./sumtime | tr -d '\n')
-[ $? = 0 ] || ng "$LINENO"
-[ "${out}" = "0m" ] || ng "$LINENO"
+out=$(echo "" | ./sumtime)
+[ $? != 0 ] || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
 
 # 数字なし
-out=$(echo "abc" | ./sumtime | tr -d '\n')
-[ $? = 0 ] || ng "$LINENO"
-[ "${out}" = "0m" ] || ng "$LINENO"
+out=$(echo "abc" | ./sumtime)
+[ $? != 0 ] || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
 
 # 単位が不正
-out=$(echo "10x" | ./sumtime | tr -d '\n')
-[ $? = 0 ] || ng "$LINENO"
-[ "${out}" = "0m" ] || ng "$LINENO"
+out=$(echo "10x" | ./sumtime)
+[ $? != 0 ] || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
 
-# 負の値（仕様上は無視される）
-out=$(echo "-1h" | ./sumtime | tr -d '\n')
-[ $? = 0 ] || ng "$LINENO"
-[ "${out}" = "0m" ] || ng "$LINENO"
+# 負の値
+out=$(echo "-1h" | ./sumtime)
+[ $? != 0 ] || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
 
-
-[ "${res}" = 0 ] && echo ok
+[ "${res}" = 0 ] && echo ok 
 exit $res
 
