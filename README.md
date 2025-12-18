@@ -59,5 +59,6 @@ $ cat time_log.txt | ./sumtime
 
 ## ライセンス
 
-・このソフトウェアパッケージは、GNU General Public License v3.0(GPL-3.0)ライセンスの下、再頒布、コピー、改変、および使用が許可されます。
-・(c) 2025 Toriyamasan
+* このソフトウェアパッケージは、GNU General Public License v3.0(GPL-3.0)ライセンスの下、再頒布、コピー、改変、および使用が許可されます。
+
+* (c) 2025 Toriyamasan
