@@ -1,6 +1,6 @@
 #!/bin/bash -xv
 # SPDX-FileCopyrightText: 2025 Toriyamasan
-# SPDX-License-Identifier: MIT
+# SPDX-License-Identifier: GPL-3.0-only
 
 out=$(echo "1h 30m" | ./sumtime)
 [ "${out}" = "1h 30m" ] || exit 1
