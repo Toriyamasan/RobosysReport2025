@@ -6,16 +6,30 @@ import sys
 import re
 
 def main():
-    content = sys.stdin.read()
+    content = sys.stdin.read().strip()
+
+    if content == "":
+        sys.exit(1)
+
     hours = re.findall(r'(\d+(?:\.\d+)?)\s*h', content)
     minutes = re.findall(r'(\d+)\s*m', content)
+
+    if not hours and not minutes:
+        sys.exit(1)
+
     total_min = 0
-    for h in hours:
-        total_min += float(h) * 60
-    for m in minutes:
-        total_min += int(m)
+
+    try:
+        for h in hours:
+            total_min += float(h) * 60
+        for m in minutes:
+            total_min += int(m)
+    except ValueError:
+        sys.exit(1)
+
     display_h = int(total_min // 60)
     display_m = int(total_min % 60)
+
     if display_h > 0:
         print(f"{display_h}h {display_m}m")
     else:
@@ -23,3 +37,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
